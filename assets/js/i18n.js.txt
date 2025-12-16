@@ -1,0 +1,110 @@
+const I18N = {
+  el: {
+    nav_home: "Αρχική",
+    nav_products: "Κατάλογοι (PDF)",
+    nav_about: "Η Εταιρεία",
+    nav_contact: "Επικοινωνία",
+    lang_btn: "EN",
+
+    home_title: "Κατασκευές & Έργα",
+    home_sub: "Ενδεικτικές υλοποιήσεις της Inox Air σε ανοξείδωτες κατασκευές και συστήματα εξαερισμού.",
+    home_cta: "Δες τους καταλόγους (PDF)",
+    gallery_tag: "Έργο",
+
+    products_title: "Κατάλογοι σε PDF",
+    products_sub: "Δείτε ή κατεβάστε τους καταλόγους μας.",
+    pdf_open: "Άνοιγμα",
+    pdf_download: "Λήψη",
+
+    about_title: "Λίγα λόγια για την Inox Air",
+    about_sub: "Ολοκληρωμένες λύσεις επαγγελματικού εξοπλισμού εστίασης.",
+    about_p1:
+      "Η Inox Air παρέχει ολοκληρωμένες λύσεις επαγγελματικού εξοπλισμού εστίασης, με έμφαση στις ανοξείδωτες κατασκευές και στα συστήματα εξαερισμού & κλιματισμού.",
+    about_p2:
+      "Σχεδιάζουμε και υλοποιούμε λύσεις προσαρμοσμένες στις ανάγκες του χώρου σας, με στόχο τη λειτουργικότητα, την αντοχή και την ποιότητα κατασκευής.",
+
+    contact_title: "Επικοινωνία",
+    contact_sub: "Επικοινωνήστε μαζί μας για προσφορά, ραντεβού ή πληροφορίες.",
+    contact_phone: "Τηλέφωνα",
+    contact_email: "Email",
+    contact_address: "Διεύθυνση",
+    contact_hours: "Ωράριο",
+    contact_social: "Social",
+
+    footer: "© {year} Inox Air. All rights reserved."
+  },
+
+  en: {
+    nav_home: "Home",
+    nav_products: "Catalogs (PDF)",
+    nav_about: "About",
+    nav_contact: "Contact",
+    lang_btn: "EL",
+
+    home_title: "Projects & Builds",
+    home_sub: "Selected work by Inox Air in stainless steel constructions and ventilation systems.",
+    home_cta: "View catalogs (PDF)",
+    gallery_tag: "Project",
+
+    products_title: "PDF Catalogs",
+    products_sub: "Open online or download our catalogs.",
+    pdf_open: "Open",
+    pdf_download: "Download",
+
+    about_title: "About Inox Air",
+    about_sub: "End-to-end solutions for professional catering equipment.",
+    about_p1:
+      "Inox Air delivers end-to-end solutions for professional catering equipment, specializing in stainless steel constructions and ventilation & air-conditioning systems.",
+    about_p2:
+      "We design and build solutions tailored to your space, focusing on functionality, durability, and build quality.",
+
+    contact_title: "Contact",
+    contact_sub: "Get in touch for a quote, appointment, or information.",
+    contact_phone: "Phones",
+    contact_email: "Email",
+    contact_address: "Address",
+    contact_hours: "Hours",
+    contact_social: "Social",
+
+    footer: "© {year} Inox Air. All rights reserved."
+  }
+};
+
+function getLang(){ return localStorage.getItem("lang") || "el"; }
+function setLang(lang){ localStorage.setItem("lang", lang); }
+
+function applyI18n(){
+  const lang = getLang();
+  const dict = I18N[lang] || I18N.el;
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    const val = dict[key];
+    if (typeof val === "string") el.textContent = val;
+  });
+
+  document.querySelectorAll("[data-i18n-footer]").forEach(el => {
+    const year = new Date().getFullYear();
+    el.textContent = (dict.footer || "").replace("{year}", String(year));
+  });
+
+  const btn = document.getElementById("langToggle");
+  if (btn) btn.textContent = dict.lang_btn || (lang === "el" ? "EN" : "EL");
+}
+
+function initLangToggle(){
+  const btn = document.getElementById("langToggle");
+  if (!btn) return;
+  btn.addEventListener("click", () => {
+    const next = getLang() === "el" ? "en" : "el";
+    setLang(next);
+    applyI18n();
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  applyI18n();
+  initLangToggle();
+});
