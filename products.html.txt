@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inox Air | Κατάλογοι</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/i18n.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="navrow">
+      <a class="brand" href="index.html">
+        <strong>Inox Air</strong>
+        <span class="muted">Stainless Constructions • Ventilation</span>
+      </a>
+
+      <nav class="menu">
+        <a href="index.html" data-i18n="nav_home"></a>
+        <a class="active" href="products.html" data-i18n="nav_products"></a>
+        <a href="about.html" data-i18n="nav_about"></a>
+        <a href="contact.html" data-i18n="nav_contact"></a>
+        <button id="langToggle" class="btn btn-accent" type="button">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1 data-i18n="products_title"></h1>
+      <p class="muted" data-i18n="products_sub"></p>
+    </section>
+
+    <section class="list">
+      <div class="row">
+        <div class="left">
+          <strong>Κατάλογος: Ανοξείδωτες Κατασκευές</strong>
+          <span class="muted">PDF</span>
+        </div>
+        <div class="right">
+          <a class="btn btn-outline" href="assets/pdf/AnoxeidotesKataskeues.pdf" target="_blank" rel="noreferrer" data-i18n="pdf_open"></a>
+          <a class="btn btn-accent" href="assets/pdf/ExaerismosFinal.pdf" download data-i18n="pdf_download"></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="left">
+          <strong>Κατάλογος: Συστήματα Εξαερισμού</strong>
+          <span class="muted">PDF</span>
+        </div>
+        <div class="right">
+          <a class="btn btn-outline" href="assets/pdf/inox-air-catalog-2.pdf" target="_blank" rel="noreferrer" data-i18n="pdf_open"></a>
+          <a class="btn btn-accent" href="assets/pdf/inox-air-catalog-2.pdf" download data-i18n="pdf_download"></a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" data-i18n-footer></footer>
+  </main>
+</body>
+</html>

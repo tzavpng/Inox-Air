@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inox Air | Αρχική</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/i18n.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="navrow">
+      <a class="brand" href="index.html">
+        <strong>Inox Air</strong>
+        <span class="muted">Stainless Constructions • Ventilation</span>
+      </a>
+
+      <nav class="menu">
+        <a class="active" href="index.html" data-i18n="nav_home"></a>
+        <a href="products.html" data-i18n="nav_products"></a>
+        <a href="about.html" data-i18n="nav_about"></a>
+        <a href="contact.html" data-i18n="nav_contact"></a>
+        <button id="langToggle" class="btn btn-accent" type="button">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1 data-i18n="home_title"></h1>
+      <p class="muted" data-i18n="home_sub"></p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+        <span class="pill">1. Ανοξείδωτες Κατασκευές</span>
+        <span class="pill">2. Συστήματα Εξαερισμού</span>
+      </div>
+      <div style="margin-top:12px;">
+        <a class="btn btn-accent" href="products.html" data-i18n="home_cta"></a>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Gallery">
+      <article class="card">
+        <img src="assets/img/project-1.jpg" alt="Inox Air Project 1">
+        <div class="pad">
+          <span class="pill" data-i18n="gallery_tag"></span>
+          <strong>Ανοξείδωτη Κατασκευή</strong>
+          <span class="muted">Περιγραφή έργου (1–2 γραμμές).</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/img/project-2.jpg" alt="Inox Air Project 2">
+        <div class="pad">
+          <span class="pill" data-i18n="gallery_tag"></span>
+          <strong>Απορροφητήρας / Εξαερισμός</strong>
+          <span class="muted">Περιγραφή έργου (1–2 γραμμές).</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/img/project-3.jpg" alt="Inox Air Project 3">
+        <div class="pad">
+          <span class="pill" data-i18n="gallery_tag"></span>
+          <strong>Επαγγελματικός Χώρος Εστίασης</strong>
+          <span class="muted">Περιγραφή έργου (1–2 γραμμές).</span>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer" data-i18n-footer></footer>
+  </main>
+</body>
+</html>
+
